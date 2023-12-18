@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .block {
+        display: inline-block;
+        border: 1px dashed black;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        vertical-align: top;
+      }
+
+      .circle {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+      }
+      .ellipse {
+        height: 50px;
+        width: 100px;
+        border-radius: 50%;
+      }
+      .ellipse-1 {
+        height: 50px;
+        width: 100px;
+        border-radius: 50px/25px;
+        /* border-radius: 50%/50%; */
+      }
+
+      .triangle {
+        width: 0px;
+        height: 0px;
+        border: 50px solid transparent;
+        /* border-color: red blue green purple; */
+        border-left-color: green;
+        border-right-width: 0px;
+        border-top-width: 20px;
+        border-bottom-width: 20px;
+      }
+      .triangle-empty {
+        position: relative;
+        width: 0px;
+        height: 0px;
+        border: 25px solid transparent;
+        /* border-color: red blue green purple; */
+        border-left-color: green;
+        border-right-width: 0px;
+        border-top-width: 25px;
+        border-bottom-width: 25px;
+      }
+
+      .triangle-empty::after {
+        position: absolute;
+        top: -25px;
+        left: -30px;
+        content: '';
+        width: 0px;
+        height: 0px;
+        border: 25px solid transparent;
+        /* border-color: red blue green purple; */
+        border-left-color: white;
+        border-right-width: 0px;
+        border-top-width: 25px;
+        border-bottom-width: 25px;
+      }
+
+      .triangle-1 {
+        border: 1px solid transparent;
+        position: relative;
+        overflow: hidden;
+        width: 20px;
+        height: 40px;
+      }
+
+      .triangle-1::before {
+        content: '';
+        position: absolute;
+        top: 6px;
+        left: -15px;
+        display: block;
+        background-color: #000;
+        width: 25px;
+        height: 25px;
+        border: 1px solid black;
+        transform: rotate(45deg);
+        box-shadow: 1px 1px 2px 0 gray;
+      }
+      .triangle-1::after {
+        content: '';
+        position: absolute;
+        top: 6px;
+        left: -20px;
+        display: block;
+        background-color: #fff;
+        width: 25px;
+        height: 25px;
+        border: 1px solid transparent;
+        transform: rotate(45deg);
+      }
+
+      .trapezium {
+        border: 0;
+        width: 50px;
+        height: 0px;
+        border-bottom: 50px solid green;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+      }
+
+      .paarallel {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        transform: skew(-15deg);
+      }
+      .paarallel > .text {
+        transform: skew(15deg);
+      }
+
+      .cross {
+        border-color: transparent;
+        position: relative;
+        width: 50px;
+        height: 50px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .cross.cross::before {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 50px;
+        height: 10px;
+        background-color: #000;
+      }
+      .cross::after {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 10px;
+        height: 50px;
+        background-color: #000;
+      }
+
+      .hamburger {
+        border: 0;
+        border-color: transparent;
+        position: relative;
+        background: #000;
+        width: 50px;
+        height: 10px;
+        top: 20px;
+      }
+      .hamburger::before,
+      .hamburger::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 10px;
+        background-color: #000;
+        position: absolute;
+      }
+      .hamburger::before {
+        top: 20px;
+      }
+      .hamburger::after {
+        bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="block circle"></div>
+      <div class="block ellipse"></div>
+      <div class="block ellipse-1"></div>
+      <div class="block triangle"></div>
+      <div class="block triangle-empty"></div>
+      <div class="block triangle-1"></div>
+      <div class="block trapezium"></div>
+      <div class="block paarallel">
+        <div class="text">text</div>
+      </div>
+      <div class="block cross"></div>
+      <div class="block hamburger"></div>
+    </div>
+  </body>
+</html>
