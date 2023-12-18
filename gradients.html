@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .block {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        margin-right: 20px;
+        margin-bottom: 10px;
+      }
+      .lg {
+        /* to top/right/bottom/left */
+        /* to top left/... */
+        /* 45deg */
+        /* background-image: linear-gradient(180deg, red, yellow, green); */
+        background-image: linear-gradient(
+          red 0,
+          red 33%,
+          blue 34%,
+          blue 66%,
+          white 67%,
+          white 100%
+        );
+      }
+      .lg-repeat {
+        background-image: linear-gradient(90deg, gray 10px, white 5px),
+          linear-gradient(90deg, red 10px, white 5px);
+        background-repeat: repeat-x;
+        background-size: 15px 5px, 15px 5px;
+        background-position: left center, left top 20px;
+      }
+
+      .rg {
+        /* closest-side, closest-corner, fastest-side, fastest-corner*/
+        /* cirlce at 10px 10px, ellipse at bottom  */
+        background-image: radial-gradient(green 10px, yellow 40px);
+      }
+
+      .rg-repeat {
+        background-image: repeating-radial-gradient(
+          red 10px,
+          blue 20px,
+          red 30px
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="block lg"></div>
+      <div class="block lg-repeat"></div>
+      <div class="block rg"></div>
+      <div class="block rg-repeat"></div>
+    </div>
+  </body>
+</html>
