@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .outer {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        border: 2px dashed black;
+        margin-right: 20px;
+        margin-bottom: 10px;
+      }
+
+      .inner {
+        width: 50px;
+        height: 50px;
+        background: #ffab00;
+      }
+
+      .outer_center-absolute {
+        position: relative;
+      }
+      .outer_center-absolute > .inner {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+      }
+
+      .outer_center-middle {
+        position: relative;
+      }
+
+      .outer_center-middle > .inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;
+        margin-left: -25px;
+      }
+
+      .outer_center-transform > .inner {
+        transform: translate(75px, 75px);
+      }
+      .outer_center-flexbox {
+        display: inline-flex;
+        justify-content: center;
+      }
+      .outer_center-flexbox > .inner {
+        align-self: center;
+      }
+      .outer_center-margin-auto {
+        display: inline-flex;
+      }
+
+      .outer_center-margin-auto > .inner {
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="outer outer_center-absolute">
+        <div class="inner"></div>
+      </div>
+      <div class="outer outer_center-middle">
+        <div class="inner"></div>
+      </div>
+      <div class="outer outer_center-transform">
+        <div class="inner"></div>
+      </div>
+      <div class="outer outer_center-flexbox">
+        <div class="inner"></div>
+      </div>
+      <div class="outer outer_center-margin-auto">
+        <div class="inner"></div>
+      </div>
+    </div>
+  </body>
+</html>
